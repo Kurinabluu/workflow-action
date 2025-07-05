@@ -1,3 +1,6 @@
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
 export default defineConfig({
   base: `/workflow-action/`,  // 设置部署基础路径
   plugins: [vue()],       // 使用 Vue 插件
@@ -8,3 +11,4 @@ export default defineConfig({
 
   }
 });
+
