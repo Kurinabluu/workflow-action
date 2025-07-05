@@ -1,14 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-const repoName = 'your-repo-name'; // 替换为实际仓库名
-
-module.exports = {
-  publicPath: `/${repoName}/`,  // 核心配置！
-  outputDir: 'dist',           // 构建输出目录
-  assetsDir: 'static',         // 静态资源目录
-  productionSourceMap: false   // 禁用 source map
-}
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-})
+  base: `/workflow-action/`,  // 设置部署基础路径
+  plugins: [vue()],       // 使用 Vue 插件
+  build: {                // 构建配置
+    outDir: 'dist',       // 输出到 dist 目录
+    assetsDir: 'static',  // 静态资源放在 static 子目录
+    sourcemap: false,     // 不生成 source map
+
+  }
+});
